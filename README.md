@@ -43,3 +43,10 @@ def pylint(ctx):
     del ctx
     invoke.run("pylint " + " ".join(get_pylint_args()), echo=True)
 ```
+
+
+Jupyter extension:
+- pip install jupyter_contrib_nbextensions
+- pip install jupyter_nbextensions_configurator
+- (needed?) jupyter nbextensions_configurator enable --user
+- jupyter-contrib-nbextension install --system
