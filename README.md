@@ -1,55 +1,3 @@
-## Docker commands
-```
-Docker ps
-Docker images
-Docker run -it <> bash (-p 8888:8888)(-d)
-docker exec -it upbeat_panini /bin/bash   (go into a running docker container)
-docker commit -p cocky_goldberg tf_sai_test (commiting changes)
-docker rm $(docker ps -aq) (remove all containers but not images and not the running ones)
-docker run -it -p 0.0.0.0:6006:6006 -p 8888:8888 <TF docker image>(docker with jupyter and tensorboard enabled)
-Docker rmi <image name> (remove an image)
-docker rmi $(docker images -f "dangling=true" -q) (remove none dockers)
-```
-## Docker tensorflow on Bash on windows (you are unfortunate)
-
-- Enable windows subsystem for linux
-- Install docker on windows
-- Launch it and enable hyper-V and virtualization if and when it asks for
-- Follow https://blog.jayway.com/2017/04/19/running-docker-on-bash-on-windows/ to enable
-- Done
-
-## AWS guide:
-AWS mounting EBS: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html 
-
-## Minikube:
-Install as per: https://kubernetes.io/docs/tasks/tools/install-minikube/
-
-## Virtual env 
-```apt-get update
-apt-get install python-pip git wget curl lsb_release vim
-pip install --upgrade pip
-pip install virtualenv
-
-sudo pip install virtualenv
-virtualenv -p python3.5 venv1
-. venv1/bin/activate
-pip --no-cache-dir install -r req.txt
-Deactivate
-pip freeze -r requirements.txt
-```
-
-## Jupyter:
-```
-pip3 install jupyter >
-pip install jupyter >
-jupyter-notebook --ip=0.0.0.0 --allow-root
-pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator
-jupyter nbextensions_configurator enable --user
-jupyter-contrib-nbextension install --system
-```
-- https://github.com/powerpak/jupyter-dark-theme 
-- Todo: Running secure Jupyternotebook: http://jupyter-notebook.readthedocs.io/en/stable/public_server.html
-
 ## python_custom_hooks
 Include in all python projects  
 Inspired from https://dmerej.info/blog/post/how-i-lint/#fn:1 
@@ -102,3 +50,56 @@ Jupyter extension:
 - pip install jupyter_nbextensions_configurator
 - (needed?) jupyter nbextensions_configurator enable --user
 - jupyter-contrib-nbextension install --system
+
+## Docker commands
+```
+Docker ps
+Docker images
+Docker run -it <> bash (-p 8888:8888)(-d)
+docker exec -it upbeat_panini /bin/bash   (go into a running docker container)
+docker commit -p cocky_goldberg tf_sai_test (commiting changes)
+docker rm $(docker ps -aq) (remove all containers but not images and not the running ones)
+docker run -it -p 0.0.0.0:6006:6006 -p 8888:8888 <TF docker image>(docker with jupyter and tensorboard enabled)
+Docker rmi <image name> (remove an image)
+docker rmi $(docker images -f "dangling=true" -q) (remove none dockers)
+```
+## Docker tensorflow on Bash on windows (you are unfortunate)
+
+- Enable windows subsystem for linux
+- Install docker on windows
+- Launch it and enable hyper-V and virtualization if and when it asks for
+- Follow https://blog.jayway.com/2017/04/19/running-docker-on-bash-on-windows/ to enable
+- Done
+
+## AWS guide:
+AWS mounting EBS: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html 
+
+## Minikube:
+Install as per: https://kubernetes.io/docs/tasks/tools/install-minikube/
+
+## Virtual env 
+```apt-get update
+apt-get install python-pip git wget curl lsb_release vim
+pip install --upgrade pip
+pip install virtualenv
+
+sudo pip install virtualenv
+virtualenv -p python3.5 venv1
+. venv1/bin/activate
+pip --no-cache-dir install -r req.txt
+Deactivate
+pip freeze -r requirements.txt
+```
+
+## Jupyter:
+```
+pip3 install jupyter >
+pip install jupyter >
+jupyter-notebook --ip=0.0.0.0 --allow-root
+pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator
+jupyter nbextensions_configurator enable --user
+jupyter-contrib-nbextension install --system
+```
+- https://github.com/powerpak/jupyter-dark-theme 
+- Todo: Running secure Jupyternotebook: http://jupyter-notebook.readthedocs.io/en/stable/public_server.html
+
