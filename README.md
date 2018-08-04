@@ -100,6 +100,10 @@ pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator
 jupyter nbextensions_configurator enable --user
 jupyter-contrib-nbextension install --system
 ```
-- https://github.com/powerpak/jupyter-dark-theme 
 - Todo: Running secure Jupyternotebook: http://jupyter-notebook.readthedocs.io/en/stable/public_server.html
-
+- Jupyter themes:
+```
+pip install jupyterthemes
+pip install --upgrade jupyterthemes
+jt -t onedork -fs 95 -tfs 11 -nfs 115 -cellw 88% -T -N
+```
