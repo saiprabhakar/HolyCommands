@@ -93,8 +93,8 @@ pip freeze -r requirements.txt
 
 ## Jupyter:
 ```
-pip3 install jupyter >
-pip install jupyter >
+pip3 install jupyter
+pip install jupyter
 jupyter-notebook --ip=0.0.0.0 --allow-root
 pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator
 jupyter nbextensions_configurator enable --user
