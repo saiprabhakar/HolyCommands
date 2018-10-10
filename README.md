@@ -96,14 +96,14 @@ pip freeze -r requirements.txt
 pip3 install jupyter
 pip install jupyter
 jupyter-notebook --ip=0.0.0.0 --allow-root
-pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator
+sudo pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator # system wide installation
 jupyter nbextensions_configurator enable --user
-jupyter-contrib-nbextension install --system
+sudo jupyter-contrib-nbextension install --system
 ```
 - Todo: Running secure Jupyternotebook: http://jupyter-notebook.readthedocs.io/en/stable/public_server.html
 - Jupyter themes:
 ```
-pip install jupyterthemes
+# activate virtualenv then execute the below commands
 pip install --upgrade jupyterthemes
 jt -t onedork -fs 95 -tfs 11 -nfs 115 -cellw 88% -T -N
 ```
