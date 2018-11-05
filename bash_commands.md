@@ -13,7 +13,7 @@ grab text with or within `[` \
 `grep -oP -r '\[(.*?)\]' stm_raw/ | cut -d":" -f2 | sort -u > ../non_vocab_complete.txt`
 
 grab text from textgrid and make new file \
-`for f in `find ~/transcripts_textgrid/ -name "*.txt"`; do grep -oP 'text = \".*?\"' $f | cut -f2- -d= > ~/temp/`basename $f .TextGrid.txt`.txt; done`
+```for f in `find ~/transcripts_textgrid/ -name "*.txt"`; do grep -oP 'text = \".*?\"' $f | cut -f2- -d= > ~/temp/`basename $f .TextGrid.txt`.txt; done```
 
 grab text withing `<>` and find uique \
 `find temp/ -name "*.txt" | xargs cat | grep -oP '\<(.*?)\>'| sort -u`
