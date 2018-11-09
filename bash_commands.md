@@ -23,3 +23,9 @@ grab text with `<NIS>` but do not have `<NIS/>` and `</NIS>` \
 
 replace `<sdf sdf>` with `<sdfsdf>` \
 `find . -name "*.txt" | xargs sed -i -e 's/<INAUDIBLE\ SPEECH>/<INAUDIBLESPEECH>/g' `
+
+for all the file (*.stm) remove lines begining with `;` then modify the 3rd field (`ss_dd_ee` -> `ee`) \
+`for f in *.stm; do  grep -v "^;" $f | awk '{n=split($3, a, "_"); $3=a[n]; print}' > $f"_"; done`
+
+Rename all files `*.stm_` -> `*.stm` 
+`rename 's/.stm_/.stm/' *.stm_`
