@@ -29,3 +29,17 @@ for all the file (*.stm) remove lines begining with `;` then modify the 3rd fiel
 
 Rename all files `*.stm_` -> `*.stm` 
 `rename 's/.stm_/.stm/' *.stm_`
+
+Scipt for renaming files in one dir with files in another (sorted by ls)
+```
+src=$1
+namesrc=$2
+dest=$3
+for f in `ls $namesrc/*.docx`; do
+        f11=`ls $src/*.docx`;
+        f1=`echo $f11 | cut -d" " -f1`
+        newname=`basename $f`;
+        oldname=`basename $f1`;
+        mv $f1 $dest/$newname;
+done
+```
