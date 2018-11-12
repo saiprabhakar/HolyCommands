@@ -27,10 +27,11 @@ replace `<sdf sdf>` with `<sdfsdf>` \
 for all the file (*.stm) remove lines begining with `;` then modify the 3rd field (`ss_dd_ee` -> `ee`) \
 `for f in *.stm; do  grep -v "^;" $f | awk '{n=split($3, a, "_"); $3=a[n]; print}' > $f"_"; done`
 
-Rename all files `*.stm_` -> `*.stm` 
-`rename 's/.stm_/.stm/' *.stm_`
+Rename all files `*.stm_` -> `*.stm` \
+`rename 's/.stm_/.stm/' *.stm_` \
+```for f in AA*_upmc*.TextGrid; do a=`cut -d"_" -f3-6 <<< $f`; mv $f $a.TextGrid; done```
 
-Scipt for renaming files in one dir with files in another (sorted by ls)
+Scipt for renaming files in one dir with files in another (sorted by ls) \
 ```
 src=$1
 namesrc=$2
