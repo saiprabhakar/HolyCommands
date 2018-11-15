@@ -31,7 +31,7 @@ Rename all files `*.stm_` -> `*.stm` \
 `rename 's/.stm_/.stm/' *.stm_` \
 ```for f in AA*_upmc*.TextGrid; do a=`cut -d"_" -f3-6 <<< $f`; mv $f $a.TextGrid; done```
 
-Scipt for renaming files in one dir with files in another (sorted by ls) \
+Script for renaming files in one dir with files in another (sorted by ls) \
 ```
 src=$1
 namesrc=$2
@@ -44,3 +44,9 @@ for f in `ls $namesrc/*.docx`; do
         mv $f1 $dest/$newname;
 done
 ```
+
+Get sorted frequency of a column in a file \
+`cut -d":" -f3 < file1.txt | sort | uniq -cn | sort -rn > sorted_freq.txt`
+
+Compare two sorted filelists (use `sort` without flags) and get only items that are different \
+`comm f1.txt f2.txt -3`
