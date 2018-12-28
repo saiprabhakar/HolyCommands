@@ -50,3 +50,10 @@ Get sorted frequency of a column in a file \
 
 Compare two sorted filelists (use `sort` without flags) and get only items that are different \
 `comm f1.txt f2.txt -3`
+
+
+fast grepping
+```
+time find . -name "*.stm" | parallel -k -j1000% -n 1000 -m grep -H -n '\\[lay'
+# for bonus speed use grep's -F and export LC_ALL=C (mainly for large files)
+```
