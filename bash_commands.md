@@ -62,4 +62,4 @@ screening: append logs to logfile1-- c-a d to detach \
 ```screen -L logfile1 <cmd>``` 
 
 screening: output logs to logfile1 --- automatically exists \
-```screen -dmS w1; screen -S w1 -X stuff $'<cmd> > logfile1\n exit\n'``` 
+```screen -dmS w1; screen -S w1 -X stuff $'<cmd> &> logfile1\n exit\n'``` 
