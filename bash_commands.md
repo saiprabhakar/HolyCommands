@@ -52,8 +52,14 @@ Compare two sorted filelists (use `sort` without flags) and get only items that 
 `comm f1.txt f2.txt -3`
 
 
-fast grepping
+fast grepping 
 ```
 time find . -name "*.stm" | parallel -k -j1000% -n 1000 -m grep -H -n '\\[lay'
 # for bonus speed use grep's -F and export LC_ALL=C (mainly for large files)
 ```
+
+screening: append logs to logfile1-- c-a d to detach \
+```screen -L logfile1 <cmd>``` 
+
+screening: output logs to logfile1 --- automatically exists \
+```screen -dmS w1; screen -S w1 -X stuff $'<cmd> > logfile1\n exit\n'``` 
