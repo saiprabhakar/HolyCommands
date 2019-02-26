@@ -63,3 +63,6 @@ screening: append logs to logfile1-- c-a d to detach \
 
 screening: output logs to logfile1 --- automatically exists \
 ```screen -dmS w1; screen -S w1 -X stuff $'<cmd> &> logfile1\n exit\n'``` 
+
+word list file manipulation
+```cat frequent_word_lists_fiction_60_category | sed 's/^[ \t]*//;s/[ \t]*$//;s/  */ /g' | sed -r '/^\s*$/d' | cut -d" " -f1 > frequent_word_lists_fiction_60_category_clean```
