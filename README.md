@@ -62,8 +62,8 @@ docker rm $(docker ps -aq) (remove all containers but not images and not the run
 docker run -it -p 0.0.0.0:6006:6006 -p 8888:8888 <TF docker image>(docker with jupyter and tensorboard enabled)
 Docker rmi <image name> (remove an image)
 docker rmi $(docker images -f "dangling=true" -q) (remove none dockers)
-docker-compose -f <>.yml build
-docker-compose -f <>.yml up  --parallel
+docker-compose -f <>.yml build --parallel
+docker-compose -f <>.yml up
 docker-compose -f <>.yml up -d --no-deps --build <service_name> (update one container defined as servicename fast)
 ```
 ## Docker tensorflow on Bash on windows (you are unfortunate)
