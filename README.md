@@ -55,16 +55,18 @@ Jupyter extension:
 ```
 Docker ps
 Docker images
-Docker run -it <> bash (-p 8888:8888)(-d)
-docker exec -it upbeat_panini /bin/bash   (go into a running docker container)
-docker commit -p cocky_goldberg tf_sai_test (commiting changes)
-docker rm $(docker ps -aq) (remove all containers but not images and not the running ones)
-docker run -it -p 0.0.0.0:6006:6006 -p 8888:8888 <TF docker image>(docker with jupyter and tensorboard enabled)
-Docker rmi <image name> (remove an image)
-docker rmi $(docker images -f "dangling=true" -q) (remove none dockers)
+Docker run -it <> bash # (-p 8888:8888)(-d)
+docker exec -it upbeat_panini /bin/bash #  (go into a running docker container)
+docker commit -p cocky_goldberg tf_sai_test # (commiting changes)
+docker rm $(docker ps -aq) # (remove all containers but not images and not the running ones)
+docker run -it -p 0.0.0.0:6006:6006 -p 8888:8888 <TF docker image> # (docker with jupyter and tensorboard enabled)
+Docker rmi <image name># (remove an image)
+docker rmi $(docker images -f "dangling=true" -q)# (remove none dockers)
 docker-compose -f <>.yml build --parallel
 docker-compose -f <>.yml up
-docker-compose -f <>.yml up -d --no-deps --build <service_name> (update one container defined as servicename fast)
+docker-compose -f <>.yml up -d --no-deps --build <service_name> # update one container defined as servicename fast
+docker stats -a --format   'CPU: {{.CPUPerc}}\tMEM: {{.MemPerc}}' `docker ps -q`  > log_mem_AE # log memory
+cat log_mem_AE | sed 's/\x1b\[[0-9;]*[a-zA-Z]//g' | cut -d" " -f3 | cut -d "%" -f1 | sort -nr | head -n1 # find peak memory
 ```
 ## Docker tensorflow on Bash on windows (you are unfortunate)
 
