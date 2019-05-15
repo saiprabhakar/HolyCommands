@@ -112,3 +112,15 @@ sudo jupyter-contrib-nbextension install --system
 pip install --upgrade jupyterthemes
 jt -t onedork -fs 95 -tfs 11 -nfs 115 -cellw 88% -T -N
 ```
+- To install the exact python version the virtualenv is using (python3.6 instead of python3)
+```
+python -m ipykernel install --user --name=.venv2
+```
+- If you get error with port being empty or '*'
+```
+pip install notebook==5.6.0
+```
+- If `RuntimeWarning: coroutine 'WebSocketHandler.get' was never awaited`
+```
+pip install "tornado<6"
+```
