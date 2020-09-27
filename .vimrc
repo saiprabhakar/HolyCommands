@@ -101,3 +101,5 @@ let g:solarized_termtrans=1
 
 set textwidth=0
 set wrapmargin=0
+set noeb vb t_vb=
+
