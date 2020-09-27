@@ -1,0 +1,29 @@
+kLogs() {
+  echo kubectl logs $1
+  kubectl logs $1
+}
+kExec() {
+  echo kubectl exec -it $1 -- /bin/bash
+  kubectl exec -it $1 -- /bin/bash
+}
+alias kPod="kubectl get pods"
+alias wkPod="watch -n5 kubectl get pods"
+
+
+getGitStatus() {
+  gitBranchDisplay=$(git branch 2>/dev/null | grep '^*' | colrm 1 2)
+  if [[ $gitBranchDisplay ]]; then
+    gitNumUnchanged=$(git status -s 2>/dev/null | wc -lc | tr -s " " | cut -d " " -f 2)
+    if [[ $gitNumUnchanged > 0 ]]; then
+      echo -e "("$gitBranchDisplay") $gitNumUnchanged+\n└─ \$ ▶ "
+    else
+      echo -e "("$gitBranchDisplay")\n└─ \$ ▶ "
+    fi
+  else
+    echo ""
+  fi
+}
+
+#PS1=$PS1"(\$(git branch 2>/dev/null | grep '^*' | colrm 1 2))\$\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\] ▶\[\033[0m\] "
+
+PS1=$PS1" \$(getGitStatus)"
