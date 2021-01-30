@@ -124,3 +124,7 @@ pip install notebook==5.6.0
 ```
 pip install "tornado<6"
 ```
+
+## SSH connections getting dropped off after 10 min: keep alive
+- gcloud ssh https://cloud.google.com/compute/docs/troubleshooting/general-tips#mac-osx-client
+- Do something similar for regular ssh
