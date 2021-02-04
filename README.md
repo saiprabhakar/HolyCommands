@@ -128,3 +128,6 @@ pip install "tornado<6"
 ## SSH connections getting dropped off after 10 min: keep alive
 - gcloud ssh https://cloud.google.com/compute/docs/troubleshooting/general-tips#mac-osx-client
 - Do something similar for regular ssh
+
+## Force delete k8 Pods
+- https://support.platform9.com/hc/en-us/articles/360022128833-Forcefully-Delete-Kubernetes-Pod
