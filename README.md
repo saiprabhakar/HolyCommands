@@ -129,5 +129,10 @@ pip install "tornado<6"
 - gcloud ssh https://cloud.google.com/compute/docs/troubleshooting/general-tips#mac-osx-client
 - Do something similar for regular ssh
 
-## Force delete k8 Pods
+## K8s
+
+Force delete k8 Pods
 - https://support.platform9.com/hc/en-us/articles/360022128833-Forcefully-Delete-Kubernetes-Pod
+
+Managing multiple contexts
+- https://stackoverflow.com/questions/43643463/how-to-switch-kubectl-clusters-between-gcloud-and-minikube
