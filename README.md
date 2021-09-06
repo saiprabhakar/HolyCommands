@@ -136,3 +136,10 @@ Force delete k8 Pods
 
 Managing multiple contexts
 - https://stackoverflow.com/questions/43643463/how-to-switch-kubectl-clusters-between-gcloud-and-minikube
+
+
+## Memory
+
+```
+watch -n1 "grep ^VmPeak /proc/10122/status"
+```
