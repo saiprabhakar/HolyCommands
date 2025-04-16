@@ -1,0 +1,76 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "inputs": [
+    {
+      "id": "testFunctionName",
+      "type": "promptString",
+      "description": "Enter the test function name (e.g. test_something)",
+      "default": "test_example"
+    }
+  ],
+  "configurations": [
+  
+    {
+      "name": "Python Debugger: Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Python: Run Pytest",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "-v",
+        "--maxfail=1",
+        "tests" // Replace with the path to your test directory or file
+      ],
+      "console": "integratedTerminal",
+      "justMyCode": true,
+    },
+    {
+      "name": "Python: Run Pytest (Current File)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "${file}", // Pass the currently open file to pytest
+        "-v", // Verbose output
+        "--maxfail=1" // Stop on first failure
+      ],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Python: Run Pytest (Current Function)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        // ${file} means the file you have open;
+        // ${input:testFunctionName} will be asked for when you start debugging
+        "${file}::${input:testFunctionName}",
+        "-v"
+      ],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+        "name": "Python: conda Current File",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${file}",
+        "console": "integratedTerminal",
+        "justMyCode": true,
+        "python": "/Users/sai.prabhakar/miniconda3/envs/concept-agents/bin/python",
+        "env": {
+            "GOOGLE_CLOUD_PROJECT": "tl-jrctf1jhk7t2lkrcda87"
+        }
+    }
+  ]
+}
